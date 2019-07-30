@@ -6,6 +6,7 @@ Developed a E-commerce web application using MEAN stack.
 
 **Username :** yashwantsingh7062@gmail.com **Password :** yashwantsingh
 
+## Server folder containers the files to be deployed on the server
 
 ## Development server
 
