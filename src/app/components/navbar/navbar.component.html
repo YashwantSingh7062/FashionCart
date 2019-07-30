@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand ml-5" routerLink="products"><i class="fas fa-shopping-cart"></i><strong>Fashion</strong>Cart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto mr-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" *ngIf="httpService.isLoggedIn()"  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{userData.name}}
+          </a>
+          <div class="dropdown-menu" *ngIf="httpService.isLoggedIn()" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="orders"><i class="fas fa-folder-open mr-2"></i> My Orders</a>
+            <a class="dropdown-item" routerLink="profile"><i class="fas fa-user-circle mr-2"></i> My profile</a> 
+            <a class="dropdown-item" routerLink="logout" *ngIf="httpService.isLoggedIn()" routerLinkActive ="link-active"><i class="fas fa-power-off mr-2"></i> Logout</a>
+          </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="login" *ngIf="!httpService.isLoggedIn()" routerLinkActive="link-active">Login</a>
+        </li>
+        <li class="nav-item" style="line-height:30px;">
+            <a class="nav-link" routerLink="cart"><i class="fas fa-shopping-cart"></i><span class="badge badge-success">{{communication.getTheProduct().length}}</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
