@@ -1,9 +1,0 @@
-<div class="card">
-  <div class="card-body">
-    <img class="card-img-top" style="height:200px;" [src]="product.image" alt="ProductImage"/>
-    <h6 [title]="product.name">{{product.name | slice : 0:20}}...</h6>
-    <small class="text-muted">{{product.brand}}</small>
-    <h3><i class="fas fa-rupee-sign"></i> {{product.price}}</h3>
-    <button type="button" (click)="addToCart()" class="btn btn-block btn-primary mt-4">Add To Cart</button>
-  </div>
-</div>
